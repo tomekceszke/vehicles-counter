@@ -5,6 +5,10 @@ It first learns how to recognize cars using neural networks then detects and cou
 ## Proof of concept
 [![Proof of concept](doc/poc.gif)](https://youtu.be/DgE2UIsc_hw)
 
+## Traffic camera snapshot
+![street](doc/img/street.jpg)
+
+
 ## 'Cars' training samples
 ![car_sample](doc/img/cars_samples.jpg)
 
