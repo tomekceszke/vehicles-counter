@@ -6,18 +6,9 @@ pkg load image;
 
 source('conf/settings.m');
 source('lib/features.m');
+source('lib/class.m');
 source('lib/nn.m');
 source('lib/fmincg.m');
-
-%% ----------- settings
-iterations = 60;
-lambda = 0.01;
-input_layer_size = NaN; % will be defined later
-hidden_layer_size = 25;
-output_layer_size = 1;
-num_labels = output_layer_size;
-samples_to_show = 5;
- 
 
 %% ----------- datasource
 fprintf('Loading data...\n')
@@ -40,6 +31,8 @@ input_layer_size = columns(X);
 %% ----------- label
 fprintf('Preparing label...\n')
 y = [ones(columns(notcars_images),1); zeros(columns(cars_images),1)];
+output_layer_size = 1;
+num_labels = output_layer_size;
 
 %% ----------- pre-training operations
 fprintf('\nInitializing Neural Network Parameters ...\n')
@@ -52,9 +45,10 @@ fprintf('\nCost for initial parameters: %d\n',J);
                    
 %% ----------- train
 fprintf('\nTraining Neural Network... \n')
-options = optimset('MaxIter', iterations);
+options = optimset('MaxIter', iterations,'OutputFcn', @saveCostHistory);
 costFunction = @(p) cost(p, input_layer_size, hidden_layer_size, output_layer_size, X, y, lambda);
 [nn_params, cost] = fmincg(costFunction, initial_nn_params, options);
+plotCost(cost);
 Theta1 = reshape(nn_params(1:hidden_layer_size * (input_layer_size + 1)), ...
                  hidden_layer_size, (input_layer_size + 1));
 Theta2 = reshape(nn_params((1 + (hidden_layer_size * (input_layer_size + 1))):end), ...
@@ -63,5 +57,4 @@ save Theta1.mat Theta1;
 save Theta2.mat Theta2;
                  
 accuracy = recognize(Theta1, Theta2, X);
-%disp([accuracy y]);
 fprintf('\nDone.\n Final cost: %.3f \t Accuracy: %d%%\n\n', cost(end),round(mean(double(accuracy == y)) * 100));

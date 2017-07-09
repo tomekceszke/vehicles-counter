@@ -2,14 +2,6 @@
  
 1;
 
- function g = sigmoid(z)
-  g = 1.0 ./ (1.0 + exp(-z));  
-end
-
-function h = hypothesis(X, theta)
-    h = sigmoid(X*theta);  
-end
- 
 function W = randInitializeWeights(L_in, L_out)
   W = zeros(L_out, 1 + L_in);
   epsilon_init = 0.12;
@@ -62,6 +54,14 @@ function [J grad] = cost(nn_params, input_layer_size, hidden_layer_size, num_lab
   Theta2_grad = Theta2_grad +(lambda/m)*Theta2_reg_;
   grad = [Theta1_grad(:) ; Theta2_grad(:)];
 end
+
+
+function bstop = saveCostHistory(x, optv, state)
+    global cost_history;
+    cost_history(optv.iter)=optv.fval;
+    %plot(optv.iter, optv.fval)  
+    bstop = false;
+endfunction
 
 function [r h2] = recognize(Theta1,Theta2,X)
   m = size(X, 1);
