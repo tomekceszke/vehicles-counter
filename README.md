@@ -2,9 +2,13 @@
 Written in Matlab/Octave vehicle counter. 
 It first learns how to recognize cars using neural networks then detects and counts them on live traffic camera stream.
 
+
+* Classification algorithm: neural network with 1 hidden layer
+* Optimization algorithm: backpropagation
+
 [![Proof of concept](doc/poc.gif)](https://youtu.be/DgE2UIsc_hw)
 
-### Source
+### Input (snapshot)
 ![street](doc/img/street.jpg)
 
 ### Training efficiency
