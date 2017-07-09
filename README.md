@@ -11,9 +11,6 @@ It first learns how to recognize cars using neural networks then detects and cou
 ### Input (snapshot)
 ![street](doc/img/street.jpg)
 
-### Training efficiency
-![red_sample](doc/img/cost.jpg)
-
 ### 'Cars'  samples
 ![car_sample](doc/img/cars_samples.jpg)
 
@@ -24,6 +21,9 @@ It first learns how to recognize cars using neural networks then detects and cou
 * collect some training samples using [bin/collectSamples.bat](bin/collectSamples.bat)
 * then put them to the respective directories under datasource/train/
 * run [learn.m](learn.m) script in Matlab/Octave
+
+### Training efficiency
+![red_sample](doc/img/cost.jpg)
 
 ## Test (optional)
 * collect some test samples using [bin/collectSamples.bat](bin/collectSamples.bat)
