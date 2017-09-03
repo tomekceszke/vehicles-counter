@@ -1,6 +1,5 @@
 # Vehicles Counter
-Written in Matlab/Octave vehicle counter. 
-It first learns how to recognize cars using neural networks then detects and counts them on live traffic camera stream.
+This Octave/Matlab script first learns how to recognize cars using neural networks then detects and counts them on live traffic camera stream.
 
 * Classification method: neural network with 1 hidden layer
 * Optimization : Backpropagation
