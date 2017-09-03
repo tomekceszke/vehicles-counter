@@ -4,11 +4,11 @@ This Octave/Matlab script first learns how to recognize cars using neural networ
 * Classification method: neural network with 1 hidden layer
 * Optimization : Backpropagation
 
+[![Proof of concept](doc/poc.gif)](https://youtu.be/DgE2UIsc_hw)
+
 ## Note
 - *Written only for educational purposes*
 - *Intentionally written in pure Matlab language, using only elementary arithmetic operations:*
-
-[![Proof of concept](doc/poc.gif)](https://youtu.be/DgE2UIsc_hw)
 
 ## Input (snapshot)
 ![street](doc/img/street.jpg)
