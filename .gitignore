@@ -3,3 +3,5 @@ log_reg/
 datasource/collected
 datasource/live/*
 
+.idea/
+datasource/live/
