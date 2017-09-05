@@ -1,5 +1,5 @@
 octave-workspace
 log_reg/
-datasource/collected
+datasource/collected/*
 .idea/
-datasource/live/
+datasource/live/*
