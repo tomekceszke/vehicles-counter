@@ -2,6 +2,8 @@
  
 1;
 
+source('lib/class.m');
+
 function W = randInitializeWeights(L_in, L_out)
   W = zeros(L_out, 1 + L_in);
   epsilon_init = 0.12;
